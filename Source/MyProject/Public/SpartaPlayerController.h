@@ -1,0 +1,32 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/PlayerController.h"
+#include "SpartaPlayerController.generated.h"
+
+
+class UInputMappingContext;
+class UInputAction;
+UCLASS()
+class MYPROJECT_API ASpartaPlayerController : public APlayerController
+{
+	GENERATED_BODY()
+
+public:
+	ASpartaPlayerController();
+
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Input")
+	UInputMappingContext* IntputMappingContext;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Input")
+	UInputAction* MoveAction;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Input")
+	UInputAction* JumpAction;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Input")
+	UInputAction* LookAction;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Input")
+	UInputAction* SprintAction;
+protected:
+	virtual void BeginPlay() override;
+};
